@@ -5,7 +5,12 @@ from blog.routers import blog, user, authentication
 from fastapi.middleware.cors import CORSMiddleware
 
 
-app = FastAPI()
+app = FastAPI(
+    docs_url="https://kikaibe.onrender.com/docs#/Blogs/docs_url",
+    openapi_url="https://kikaibe.onrender.com/docs#/Blogs/openapi.json",
+    redoc_url=None,
+)
+
 origins = ["http://127.0.0.1:3000", "http://10.0.0.44:3000"]
 
 app.add_middleware(
